@@ -8,5 +8,6 @@ urlpatterns = [
    # path('update-student/<id>/',update_student),
     #path('delete-student/<id>/',delete_student),
     path('get-book/',get_book),
+    path('student/',studentapi.as_view()),
     path('register/',RegisterUser.as_view()),
 ]
