@@ -6,6 +6,25 @@ from .models import*
 from .serializers import*
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
+
+
+
+
+
+
+from rest_framework import generics
+class studentgeneric(generics.ListCreateAPIView,generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = studentserializers
+
+class studentgeneric1(generics.UpdateAPIView,generics.DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = studentserializers
+    lookup_field='id'
+class generratepdf(APIView):
+    def get(self,request):
+        return Response({'status':200})
+
 """ @api_view(['GET'])
 def home(request):
     student_obj=student.objects.all()
